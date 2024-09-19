@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('streams', function (Blueprint $table) {
-            $table->id();
+        Schema::create('class_forms', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('class_forms')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('streams');
+        Schema::dropIfExists('class_forms');
     }
 };
