@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth:api')->group(function () {
+Route::middleware('auth.api')->group(function () {
     Route::get('students', [StudentController::class, 'index']);
     // Other protected routes here
 });
